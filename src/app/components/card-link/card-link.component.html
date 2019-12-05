@@ -1,0 +1,87 @@
+
+<div class="container">
+   <div class="w3-row row">
+       <div class = "w3-twothird twothird" *ngIf="type == 'Professional'">
+               <div class="card-header">
+                       <img src="../../../assets/professional_avatar.jpg" alt="John" style="width:30%;height: 100px;">
+                       <ul class="main-nav">
+                          <li>
+                             <h6><i style = "float:left;margin-right: 5px;" class="fa fa-building"></i><span>{{ company }}</span></h6>
+                          </li>
+                          <li>
+                             <h6><i style = "float:left;margin-right: 5px;" class="fa fa-home"></i><span>{{location}}</span></h6>
+                          </li>
+                       </ul>
+                    </div>
+                    <div class="card-body">
+                           <ul class="details">
+                              <li>
+                                 <h6><i style = "float:left;margin-right: 5px;" class="fa fa-user"></i><span>{{name}}</span></h6>
+                              </li>
+                              <li>
+                                 <h6><i style = "float:left;margin-right: 5px;" class="fa fa-briefcase"></i><span>{{position}}</span></h6>
+                              </li>
+                           </ul>
+                           <ul class="details2" >
+                              <li>
+                                 <h6><i style = "float:left;margin-right: 5px;" class="fa fa-phone"></i><span>{{ph_number}}</span></h6>
+                              </li>
+                              <li>
+                                 <h6><i style = "float:left;margin-right: 5px;" class="fa fa-envelope"></i><span >{{email}}</span></h6>
+                              </li>
+                           </ul>
+                        </div>
+                        <div style="text-align: center;">
+                           <a target="_blank" [attr.href]="github"><i class="fa fa-github"></i></a>  
+                           <a target="_blank" [attr.href] = "linkedin"><i class="fa fa-linkedin"></i></a>  
+                           <a target="_blank" [attr.href]="facebook"><i class="fa fa-facebook"></i></a> 
+                        </div>
+                        <p class="type-border professional"></p>
+       </div>
+       <div class = "w3-twothird twothird" *ngIf="type == 'Business'">
+        <div class="card-header">
+                <img src="../../../assets/professional_avatar.jpg" alt="John" style="width:30%;height: 100px;">
+                <ul class="main-nav">
+                   <li>
+                      <h6><i style = "float:left;margin-right: 5px;" class="fa fa-user"></i><span>{{ name }}</span></h6>
+                   </li>
+                   <li>
+                      <h6><i style = "float:left;margin-right: 5px;" class="fa fa-home"></i><span>{{location}}</span></h6>
+                   </li>
+                </ul>
+             </div>
+             <div class="card-body">
+                    <ul class="details">
+                       <li>
+                          <h6><i style = "float:left;margin-right: 5px;" class="fa fa-user"></i><span>{{organization}}</span></h6>
+                       </li>
+                       <li>
+                          <h6><i style = "float:left;margin-right: 5px;" class="fa fa-briefcase"></i><span>{{address}}</span></h6>
+                       </li>
+                    </ul>
+                    <ul class="details2" >
+                       <li>
+                          <h6><i style = "float:left;margin-right: 5px;" class="fa fa-phone"></i><span>{{ph_number}}</span></h6>
+                       </li>
+                       <li>
+                          <h6><i style = "float:left;margin-right: 5px;" class="fa fa-envelope"></i><span >{{email}}</span></h6>
+                       </li>
+                    </ul>
+                 </div>
+                 <div style="text-align: center;">
+                  <a target = "_blank" [attr.href] = "card.website"><i class="fa fa-globe"></i></a>  
+                  <a target = "_blank" [attr.href]="card.facebook"><i class="fa fa-facebook"></i></a>  
+                 </div>
+                 <p class="type-border business"></p>
+</div>
+       <div class = "w3-third third">
+               <table style="align-self: center;">
+                       <tr>
+                              
+                              <td [vcdDownloadVCard]="vCard" ><a class= "btn btn-full"><i class="fa fa-download" style="margin-right: 5px;"></i>Download</a></td>
+                       </tr>
+                       
+               </table>
+       </div>
+   </div>
+</div>

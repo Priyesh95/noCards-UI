@@ -1,0 +1,171 @@
+
+<ng-template #content3 let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title">USER NOT FOUND</h4>
+      <button type="button" style= "color:#d0d0d0" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+            <p>Use below link to send card link via email</p>
+            <a href="#">www.google.com</a>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-light button-send" (click)="modal.dismiss('Cross click')">OKAY</button>
+    </div>
+</ng-template>
+<ng-template #content let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title">SHARE CARD</h4>
+      <button type="button" style= "color:#d0d0d0" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+            <input type="text" [(ngModel)]="email" name = "email" placeholder="Enter Email or Phone Number...">
+            <input type="hidden" value="id">
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-light button-send" (click)="sendCard(content3)">SEND</button>
+    </div>
+</ng-template>
+
+<ng-template #content2 let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title">SHARE CARD</h4>
+      <button type="button" style= "color:#d0d0d0" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+                    
+                    <div id="image_div" class="image_div">
+                    <ngx-qrcode [qrc-element-type]="url" [qrc-value] = "qrdata">
+                    </ngx-qrcode>
+                    </div>
+            <input type="hidden" value="id">
+    </div>
+    <div class="modal-footer">
+      <a [href]="href" download><button   type="button" class="btn btn-light button-send" (click)="downloadImage()">DOWNLOAD</button></a>
+    </div>
+</ng-template>
+
+<ng-template #content4 let-modal>
+   <div class="modal-header">
+     <h4 class="modal-title">SHARE CARD</h4>
+     <button type="button" style= "color:#d0d0d0" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+       <span aria-hidden="true">&times;</span>
+     </button>
+   </div>
+   <div class="modal-body">
+           <input type="text"  [(ngModel)]="card_link" readonly>
+           
+   </div>
+   <div class="modal-footer">
+      <a [href]="card_link" target="_blank"><button   type="button" class="btn btn-light button-send">GO TO CARD</button></a>
+   </div>
+</ng-template>
+
+
+<div *ngIf="professional_cards_loaded">
+<div class="container" *ngFor="let card of cards">
+<div class="w3-row row">
+<div class = "w3-twothird twothird" *ngIf="card.type == 'Professional'">
+        <div class="card-header">
+                <img src="../../../assets/professional_avatar.jpg" alt="John" style="width:30%;height: 100px;">
+                <ul class="main-nav">
+                   <li>
+                      <h6><i style = "float:left;margin-right: 5px;" class="fa fa-building"></i><span>{{ card.company }}</span></h6>
+                   </li>
+                   <li>
+                      <h6><i style = "float:left;margin-right: 5px;" class="fa fa-home"></i><span>{{card.location}}</span></h6>
+                   </li>
+                </ul>
+             </div>
+             <div class="card-body">
+                    <ul class="details">
+                       <li>
+                          <h6><i style = "float:left;margin-right: 5px;" class="fa fa-user"></i><span>{{card.name}}</span></h6>
+                       </li>
+                       <li>
+                          <h6><i style = "float:left;margin-right: 5px;" class="fa fa-briefcase"></i><span>{{card.position}}</span></h6>
+                       </li>
+                    </ul>
+                    <ul class="details2" >
+                       <li>
+                          <h6><i style = "float:left;margin-right: 5px;" class="fa fa-phone"></i><span>{{card.ph_number}}</span></h6>
+                       </li>
+                       <li>
+                          <h6><i style = "float:left;margin-right: 5px;" class="fa fa-envelope"></i><span >{{card.email}}</span></h6>
+                       </li>
+                    </ul>
+                 </div>
+                 <div style="text-align: center;">
+                    <a target="_blank" [attr.href]="card.github"><i class="fa fa-github"></i></a>  
+                    <a target="_blank" [attr.href] = "card.linkedin"><i class="fa fa-linkedin"></i></a>  
+                    <a target="_blank" [attr.href]="card.facebook"><i class="fa fa-facebook"></i></a> 
+                 </div>
+                 <p class = "type-border professional"></p>
+</div>
+
+<div class = "w3-twothird twothird" *ngIf="card.type == 'Business'">
+      <div class="card-header">
+              <img src="../../../assets/professional_avatar.jpg" alt="John" style="width:30%;height: 100px;">
+              <ul class="main-nav">
+                 <li>
+                    <h6><i style = "float:left;margin-right: 5px;" class="fa fa-building"></i><span>{{ card.name }}</span></h6>
+                 </li>
+                 <li>
+                    <h6><i style = "float:left;margin-right: 5px;" class="fa fa-home"></i><span>{{card.location}}</span></h6>
+                 </li>
+              </ul>
+           </div>
+           <div class="card-body">
+                  <ul class="details">
+                     <li>
+                        <h6><i style = "float:left;margin-right: 5px;" class="fa fa-user"></i><span>{{card.organization}}</span></h6>
+                     </li>
+                     <li>
+                        <h6><i style = "float:left;margin-right: 5px;" class="fa fa-briefcase"></i><span>{{card.address}}</span></h6>
+                     </li>
+                  </ul>
+                  <ul class="details2" >
+                     <li>
+                        <h6><i style = "float:left;margin-right: 5px;" class="fa fa-phone"></i><span>{{card.ph_number}}</span></h6>
+                     </li>
+                     <li>
+                        <h6><i style = "float:left;margin-right: 5px;" class="fa fa-envelope"></i><span >{{card.email}}</span></h6>
+                     </li>
+                  </ul>
+               </div>
+               <div style="text-align: center;">
+                  <a target = "_blank" [attr.href] = "card.website"><i class="fa fa-globe"></i></a>  
+                   <a target = "_blank" [attr.href]="card.facebook"><i class="fa fa-facebook"></i></a>  
+               </div>
+               <p class = "type-border business"></p>
+</div>
+<div class = "w3-third third">
+        <table style="align-self: center;">
+            <tr>
+                <td (click) = 'card.type == "Professional" ? cardClicked(card.professional_cards_id,card.type) : cardClicked(card.business_cards_id,card.type)'><i style="font-size: 50px;" class="fa fa-edit"></i></td>
+                <td *ngIf="card.type == 'Professional'" (click) = "shareClicked(card.professional_cards_id,card.type,content)"><i style="font-size: 50px;" class="fa fa-share-alt"></i></td>
+                <td *ngIf="card.type == 'Business'" (click) = "shareClicked(card.business_cards_id,card.type,content)"><i style="font-size: 50px;" class="fa fa-share-alt"></i></td>
+         </tr>
+         <tr>
+               <td *ngIf="card.type == 'Professional'" (click) = "qrClicked(card.professional_cards_id,content2)"><i style="font-size: 50px;" class="fa fa-qrcode"></i></td>
+               <td *ngIf="card.type == 'Business'" (click) = "qrClicked(card.business_cards_id,content2)"><i style="font-size: 50px;" class="fa fa-qrcode"></i></td>
+
+               <td><i style="font-size: 50px;" class="fa fa-copy" (click) = 'card.type == "Professional" ? copyCardClicked(card.professional_cards_id,card.type,content4) : copyCardClicked(card.business_cards_id,card.type,content4)'></i></td>
+        </tr>
+        </table>
+</div>
+</div>
+
+
+
+
+
+</div>
+</div>
+
+

@@ -1,0 +1,19 @@
+<header>
+    <nav>
+        <div class="row">
+            <img routerLink="/" style = "cursor: pointer;" src = "../../../assets/logo.png" class = "logo">
+            <ul class="main-nav">
+                <li *ngIf="!authService.isLoggedIn()"><a routerLink="/login" [routerLinkActive]="['active']"  href = "#" ><b>Login</b></a></li>
+                <!-- <li *ngIf="!authService.isLoggedIn()"><a routerLink="/register" [routerLinkActive]="['active']"><b>Register</b></a></li> -->
+                <!-- <li><a routerLink="/create-card"><b>Create Card</b></a></li> -->
+                <li><a *ngIf="authService.isLoggedIn()" routerLink="/mycards" [routerLinkActive]="['active']"><b>My Cards</b></a></li>
+                <li><a *ngIf="authService.isLoggedIn()" routerLink="/received_cards" [routerLinkActive]="['active']"><b>Received Cards</b></a></li>
+                <li><a *ngIf="authService.isLoggedIn()" routerLink="/sent_cards" [routerLinkActive]="['active']"><b>Sent Cards</b></a></li>
+                <li style = "float: right !important" *ngIf="authService.isLoggedIn()">
+                        <a routerLink="" (click)="authService.logout()"><b>Logout</b></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    
+</header>

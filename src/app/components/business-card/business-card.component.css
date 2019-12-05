@@ -1,0 +1,190 @@
+
+
+h2{
+    position: absolute;
+    margin-top:20px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+h1{
+    margin-top: 10px;
+}
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 350px;
+    margin-top: 200px;
+    /* margin-left: 40px   ; */
+    text-align: center;
+    font-family: arial;
+    font-size: 16px;
+    position: absolute;
+    /* top: 50%; */
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+  }
+  
+
+  .company-details,.contact-details{
+      display: flex;
+      justify-content: space-around;
+  }
+
+.card-header{
+    display: flex;
+    justify-content: space-between;
+    background-color: #20323E;
+}
+
+
+.main-nav{
+    /* float: right; */
+    list-style:none;
+    margin-top:35px;
+    max-width: 175px;
+    font-size: 16px;
+    /* margin-left: 100px; */
+}
+
+.main-nav li{
+    text-align: start;
+    color: #d0d0d0;
+    font-size: 16px;
+}
+
+
+.card-body{
+    display: flex;
+    padding: 0px;
+    flex-direction: row;
+    justify-content: space-between; 
+    /* align-items: center; */
+}
+
+.details,.details2{
+    list-style:none;
+    margin-top:10px;
+    padding:  5px;
+    padding-left: 0pt;
+    max-width: 175px;
+    font-size: 16px;
+    /* align-self : flex-end; */
+    
+}
+
+.details li{
+    margin: 0px 8px 0px 8px;
+    text-align: start;
+    font-size: 16px;
+    /* margin-bottom: 40px; */
+}
+.details2 li{
+    margin: 0px 8px 0px 8px;
+    text-align: start;
+    font-size: 16px;
+}
+i{
+    color: #e67e22;
+}
+
+input[type=text],[type=number],[type=file] select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+    height: 31px;
+  }
+  
+  input[type=submit] {
+    background-color: #e67e22;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    cursor: pointer;
+    float: right;
+  }
+
+  input[type=submit]:hover {
+    background-color: #cf6d17;
+  }
+
+  input[type=submit]:disabled {
+    background-color: #ccc;
+  }
+
+  
+  /* Style the container/contact section */
+  .form {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 10px;
+    margin-top:400px;
+    font-size: 16px;
+  }
+  
+  /* Create two columns that float next to eachother */
+  .column {
+    float: left;
+    width:33%;
+    margin-top: 6px;
+    padding: 20px;
+  }
+  
+  .column-optional {
+    float: left;
+    width:25%;
+    margin-top: 6px;
+    padding: 20px;
+  }
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+  @media screen and (max-width: 600px) {
+    .column, input[type=submit] {
+      width: 100%;
+      margin-top: 0;
+    }
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #e67e22; 
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #cf6d17; 
+  }
+
+  .type-border{
+    border: none;
+    outline: 0;
+    padding: 5px;
+    color: white;
+    /* background-color: #F7CE41; */
+    background-color: #6699cc; 
+    /* background-color: #A2D069; */ 
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+    margin-bottom: -1px;
+  }

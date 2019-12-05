@@ -1,0 +1,95 @@
+<!-- <div class="container"> -->
+                <div class="card">
+                                <div class="card-header">
+                                   <img src="../../../assets/professional_avatar.jpg" alt="John" style="width:30%;height: 100px;">
+                                   <ul class="main-nav">
+                                      <li>
+                                         <h6><i style = "float:left;margin-right: 5px;" class="fa fa-building"></i><span>{{ (company == "") ? "Company" : company }}</span></h6>
+                                      </li>
+                                      <li>
+                                         <h6><i style = "float:left;margin-right: 5px;" class="fa fa-home"></i><span>{{(location == "") ? "Location" : location }}</span></h6>
+                                      </li>
+                                   </ul>
+                                </div>
+                                <div class="card-body">
+                                   <ul class="details">
+                                      <li>
+                                         <h6><i style = "float:left;margin-right: 5px;" class="fa fa-user"></i><span>{{(name == "") ? "Name" : name }}</span></h6>
+                                      </li>
+                                      <li>
+                                         <h6><i style = "float:left;margin-right: 5px;" class="fa fa-briefcase"></i><span>{{(position == "") ? "Job Title" : position }}</span></h6>
+                                      </li>
+                                   </ul>
+                                   <ul class="details2" >
+                                      <li>
+                                         <h6><i style = "float:left;margin-right: 5px;" class="fa fa-phone"></i><span>{{(ph_number == "") ? 1234567890 : ph_number }}</span></h6>
+                                      </li>
+                                      <li>
+                                         <h6><i style = "float:left;margin-right: 5px;" class="fa fa-envelope"></i><span >{{(email == "") ? "Email" : email }}</span></h6>
+                                      </li>
+                                   </ul>
+                                </div>
+                                <div>
+                                   <a target="_blank" [attr.href]="(github == '') ? ' ' : github"><i class="fa fa-github"></i></a>  
+                                   <a target="_blank" [attr.href] = "(linkedin == '') ? ' ' : linkedin"><i class="fa fa-linkedin"></i></a>  
+                                   <a target="_blank" [attr.href]="(facebook == '') ? ' ' : facebook"><i class="fa fa-facebook"></i></a> 
+                                </div>
+                                <p class = "type-border"></p>
+                             </div>
+                             <div class="form">
+                                <div style="text-align:center">
+                                </div>
+                                <form (ngSubmit) = "onSubmit()">
+                                   <div class="w3-row">
+                                      <div class="w3-container w3-third">
+                                         <label>Name</label>
+                                         <input type="text" [(ngModel)]="name" name="name" placeholder="Your name..">
+                                      </div>
+                                      <div class="w3-container w3-third">
+                                         <label>Position</label>
+                                         <input type="text" [(ngModel)]="position" name="position" placeholder="Your name..">
+                                      </div>
+                                      <div class="w3-container w3-third">
+                                         <label >Location</label>
+                                         <input type="text" [(ngModel)]="location" name="location" placeholder="Your name..">
+                                      </div>
+                                   </div>
+                                   <div class="w3-row">
+                                      <div class="w3-container w3-third">
+                                         <label for="lname">Company</label>
+                                         <input type="text" [(ngModel)]="company" name = "company" placeholder="Your Company Name..">
+                                      </div>
+                                      <div class="w3-container w3-third">
+                                         <label for="lname">Email</label>
+                                         <input type="text" [(ngModel)]="email" name = "email" placeholder="Your last name..">
+                                      </div>
+                                      <div class="w3-container w3-third">
+                                         <label for="lname">Phone Number</label>
+                                         <input type="number" [(ngModel)]="ph_number" name="ph_number"  placeholder="Your contact number..">
+                                      </div>
+                                   </div>
+                                   <div class="w3-row">
+                                      <div class="w3-container w3-third">
+                                         <label>Facebook</label>
+                                         <input type="text" [(ngModel)]="facebook" name="facebook" placeholder="Your facebook..">
+                                      </div>
+                                      <div class="w3-container w3-third">
+                                         <label>Gitub</label>
+                                         <input type="text" [(ngModel)]="github" name="github" placeholder="Your Gitub..">
+                                      </div>
+                                      <div class="w3-container w3-third">
+                                         <label>Linkedin</label>
+                                         <input type="text" [(ngModel)]="linkedin" name="linkedin" placeholder="Your Linkedin..">
+                                      </div>
+                                   </div>
+                                   <div class="w3-row">
+                                      <div class="w3-container w3-half">
+                                         <input type="file" value="Profile Photo" [(ngModel)]="profile" name="profile">
+                                      </div>
+                                      <div class="w3-container w3-half">
+                                         <input type="submit" [value]="isNew ? 'Create': 'Update'" [disabled] = "!this.name || !this.company || !this.email ||!this.position || !this.location || !this.ph_number">
+                                      </div>
+                                   </div>
+                                </form>
+                             </div>
+                             

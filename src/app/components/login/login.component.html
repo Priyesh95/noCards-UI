@@ -1,0 +1,19 @@
+<form (ngSubmit) = "onSubmit()">
+      
+        <h1>Login</h1>
+        <h6 class="warning" *ngIf="showMessage">Invalid Username or Password</h6>
+        <fieldset>
+          
+            <label for="mail">Email:</label>
+            <input type="email" [(ngModel)]="email" name="email" placeholder="Email">
+            
+            <label for="password">Password:</label>
+            <input type="password" [(ngModel)]="password" name="password" placeholder="Password">
+          
+          
+        
+        </fieldset>
+        <button type="submit">Login</button>
+
+        <h6>New <a routerLink="/register">Please Signup!</a></h6>
+      </form>
