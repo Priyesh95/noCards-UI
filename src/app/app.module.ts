@@ -24,7 +24,7 @@ import { NgxVcardModule} from 'ngx-vcard';
 import { ReceivedCardsComponent } from './components/received-cards/received-cards.component';
 import { SentCardsComponent } from './components/sent-cards/sent-cards.component';
 import { BusinessCardComponent } from './components/business-card/business-card.component';
-import { NgHttpLoaderModule } from 'ng-http-loader';
+
 
 
 @NgModule({
@@ -54,7 +54,6 @@ import { NgHttpLoaderModule } from 'ng-http-loader';
     NgxQRCodeModule,
     FlashMessagesModule.forRoot(),
     NgxVcardModule,
-    NgHttpLoaderModule.forRoot(),
   ],
   providers: [AuthenticationService, AuthGuardService],
   bootstrap: [AppComponent]
