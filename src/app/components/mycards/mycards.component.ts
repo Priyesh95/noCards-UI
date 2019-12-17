@@ -43,11 +43,11 @@ export class MycardsComponent implements OnInit {
     
     this.professionalCardService.getCards().subscribe(cards=>{
         this.cards = cards
-        this.cards =cards.sort((a,b)=> {
-          var b_Date = new Date(b.date)
-          var a_Date = new Date(a.date)
-          return b_Date- a_Date;}
-        )
+        // this.cards =cards.sort((a,b)=> {
+        //   var b_Date = new Date(b.date)
+        //   var a_Date = new Date(a.date)
+        //   return b_Date- a_Date;}
+        // )
         this.professional_cards_loaded = true;
         console.log(this.cards)
     },
