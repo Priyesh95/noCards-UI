@@ -16,7 +16,7 @@ export class BusinessCardService {
     card['type'] = 'Business'
     const user = this.authService.getUserDetails();
     card['user_id'] = user.identity.user_id
-    return this.http.post<Business_Card>('http://127.0.0.1:5000/add_card',card)
+    return this.http.post<Business_Card>('https://nocards.herokuapp.com/add_card',card)
 
   }
 
@@ -28,11 +28,11 @@ export class BusinessCardService {
     card['card_id'] = id
     card['type'] = 'Business'
     console.log(card);
-    return this.http.post<any>('http://127.0.0.1:5000/share_card',card)
+    return this.http.post<any>('https://nocards.herokuapp.com/share_card',card)
   }
 
   updateCard(card:any) : Observable<Business_Card>{
-    return this.http.post<any>('http://127.0.0.1:5000/update_card',card)
+    return this.http.post<any>('https://nocards.herokuapp.com/update_card',card)
   }
 
 }

@@ -53,11 +53,11 @@ export class AuthenticationService {
   }
 
   public register(user: TokenPayload): Observable<any> {
-    return this.http.post('http://127.0.0.1:5000/register', user)
+    return this.http.post('https://nocards.herokuapp.com/register', user)
   }
 
   public login(user: TokenPayload): Observable<any> {
-    const base = this.http.post('http://127.0.0.1:5000/login', user)
+    const base = this.http.post('https://nocards.herokuapp.com/login', user)
 
 
     const request = base.pipe(

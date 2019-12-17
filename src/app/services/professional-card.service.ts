@@ -27,7 +27,7 @@ export class ProfessionalCardService {
     const user = this.authService.getUserDetails();
     var id = {}
     id['user_id'] = user.identity.user_id
-    return this.http.post<[]>('http://127.0.0.1:5000/get_cards',id)
+    return this.http.post<[]>('https://nocards.herokuapp.com/get_cards',id)
   }
 
 
@@ -36,20 +36,20 @@ export class ProfessionalCardService {
     const user = this.authService.getUserDetails();
     card['user_id'] = user.identity.user_id
     console.log(card)
-    return this.http.post<any>('http://127.0.0.1:5000/add_card',card)
+    return this.http.post<any>('https://nocards.herokuapp.com/add_card',card)
 
   }
 
-  getCard(id,type): Observable<Professional_Card>{
+  getCard(id,type): Observable<any>{
     var card = {}
     card['id'] = id;
     card['type'] = type;
     
-    return this.http.post<Professional_Card>('http://127.0.0.1:5000/get_card',card)
+    return this.http.post<any>('https://nocards.herokuapp.com/get_card',card)
   }
 
-  updateCard(card:any) : Observable<Professional_Card>{
-    return this.http.post<any>('http://127.0.0.1:5000/update_card',card)
+  updateCard(card:any) : Observable<any>{
+    return this.http.post<any>('https://nocards.herokuapp.com/update_card',card)
   }
 
 
@@ -60,21 +60,21 @@ export class ProfessionalCardService {
     card['to'] = email
     card['card_id'] = id
     card['type'] = 'Professional'
-    return this.http.post<any>('http://127.0.0.1:5000/share_card',card)
+    return this.http.post<any>('https://nocards.herokuapp.com/share_card',card)
   }
 
-  getReceivedCards():Observable<Professional_Card[]>{
+  getReceivedCards():Observable<any[]>{
     const user = this.authService.getUserDetails();
     var id = {}
     id['user_id'] = user.identity.user_id
-    return this.http.post<Professional_Card[]>('http://127.0.0.1:5000/received_cards',id)
+    return this.http.post<any[]>('https://nocards.herokuapp.com/received_cards',id)
   }
 
-  getSentCards():Observable<Professional_Card[]>{
+  getSentCards():Observable<any[]>{
     const user = this.authService.getUserDetails();
     var id = {}
     id['user_id'] = user.identity.user_id
-    return this.http.post<Professional_Card[]>('http://127.0.0.1:5000/sent_cards',id)
+    return this.http.post<any[]>('https://nocards.herokuapp.com/sent_cards',id)
   }
 
   getNote(card_id):Observable<any>{
@@ -82,7 +82,7 @@ export class ProfessionalCardService {
     const user = this.authService.getUserDetails();
     card['user_id'] = user.identity.user_id
     card['card_id'] = card_id
-    return this.http.post<any>('http://127.0.0.1:5000/get_note',card)
+    return this.http.post<any>('https://nocards.herokuapp.com/get_note',card)
   }
 
   addNote(card_id,note,type):Observable<any>{
@@ -92,7 +92,7 @@ export class ProfessionalCardService {
     card['card_id'] = card_id
     card['note'] = note
     card['type'] = type
-    return this.http.post<any>('http://127.0.0.1:5000/add_note',card)
+    return this.http.post<any>('https://nocards.herokuapp.com/add_note',card)
   }
 
 
